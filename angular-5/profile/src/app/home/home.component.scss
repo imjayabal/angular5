@@ -1,37 +1,36 @@
 @import '../../assets/scss/variables.scss';
 
-.container {
-    display: grid;
-    grid-template-columns: 50% auto;
-}
-.col {
-    padding: .4em 1.3em;
-}
-.color-dark {
-    background: $color-dark;
-}
-.color-light {
-    background: #57B3F1;
-}
+.form-box{
+    background: rgba(255,255,255,.3);
+    padding:2em;
+    min-height: 20em;
 
-input.txt {
-    border: 0;
-    padding: 1em;
-    width: 80%;
-    margin-bottom: 2em;
-}
-input.btn {
-    border: 0;
-    display:block;
-    padding:1em 3em;
-    background:#A5F883;
-    color:#003A61;
-    margin-bottom:1em;
-    cursor:pointer;
-}
-.life-container {
-    background:#3FA0E1;
-    padding:.5em;
-    font-weight:bold;
-    cursor:pointer;
+    &__header {
+        text-align: center;
+        margin: 0 0 1rem;
+        color: $color-dark;
+        padding: .5rem;
+    }
+
+    &__input{
+        width: 100%;
+        border: none;
+        padding: .5rem;
+        height: 2.75rem;
+    }
+
+    &__button{
+        margin: .50rem 0;
+        background: $color-secondary;
+        border-radius: 0;
+        color: #FFF;
+        text-transform: uppercase;
+    }
+
+    &__list{
+        &__item{
+            cursor: pointer;
+            padding: .5rem 1rem;
+        }
+    }
 }

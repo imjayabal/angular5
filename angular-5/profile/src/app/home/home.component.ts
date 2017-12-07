@@ -9,9 +9,11 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
 export class HomeComponent implements OnInit {
 
   itemCount: number;
-  btnText: string = 'Add an item to bucket';
-  goalText: any = 'My life first goal';
-  goals = [];
+  btnText: string = 'Add an item';
+  goalText: any = 'My life fourth goal';
+  goals = ['My life first goal', 'My life second goal', 'My life third goal'];
+
+  
 
   constructor() { }
 
@@ -28,11 +30,9 @@ export class HomeComponent implements OnInit {
   }
 
   removeItem(i) {
-    this.goals.splice(i);
+    this.goals.splice(i, 1);
     this.itemCount = this.goals.length;
   }
-
-
 
 
 }
