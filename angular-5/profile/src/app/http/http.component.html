@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <section id="http">
+                <p>http works fine!</p>
+                
+                <button class="btn btn-primary" (click)="getPosts()">Get Data</button>
+                <br><br>
+                
+                    <table class="table table-striped ">
+                        <thead>
+                          <tr>
+                            <th scope="col">User Id</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Body Text</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let post of posts | async">
+                            <th scope="row">{{ post.id }}</th>
+                            <td>{{ post.title }}</td>
+                            <td>{{ post.body }}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+            </section>
+        </div>
+    </div>
+</div>

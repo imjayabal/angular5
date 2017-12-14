@@ -5,11 +5,12 @@ import * as $ from 'jquery/dist/jquery.min.js';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { FooterComponent } from './footer/footer.component';
+import { HttpComponent } from './http/http.component';
 
 
 @NgModule({
@@ -17,13 +18,14 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    FooterComponent
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
