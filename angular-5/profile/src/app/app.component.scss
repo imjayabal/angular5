@@ -1,3 +1,14 @@
+
+.navbar{
+    height: 75px;
+    .navbar-brand{
+        img{
+            height: 60px;  
+        }
+    }
+}
+
+
 footer{
     background: #2d2d2d;
     padding: 1em;
@@ -10,3 +21,4 @@ footer{
         color: gray;
     }
 }
+
