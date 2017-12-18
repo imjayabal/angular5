@@ -1,0 +1,49 @@
+<section id="http-fake">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-6">
+              <h2>GET</h2>
+
+              <div class="http-fake__get">                
+                <!-- form start -->
+                <form action="#" (keydown)="keyDown($event)">
+                  <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" (keyup) = 'keyUp($event)'>
+                  </div>
+                  <button class="btn btn-primary" (click)='getData()' >{{ btnText }}</button> 
+                </form>  
+                <!-- form end -->         
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div *ngIf="dataFound" class="http-fake__get__result">            
+                  <h4>Result:</h4>
+                  <ul>
+                    <li>Id:<strong>{{id}}</strong></li>
+                    <li>Name:<strong>{{name}}</strong></li>
+                    <li>Age:<strong>{{age}}</strong></li>
+                    <li>Employee Code:<strong>{{employeeCode}}</strong></li>
+                  </ul>
+                </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="col-md-6">
+        <h2>POST</h2>
+
+        <div class="http-fake__post">
+
+           <input type="text" (keyup) = 'keyPostName($event)' placeholder="Type your name"><br>
+           <input type="text" (keyup) = 'keyPostAge($event)' placeholder="Ener your age"><br>
+           <input type="text" (keyup) = 'keyPostEmpId($event)' placeholder="Employee id">
+           <button (click)='postData()' >Post Data</button>  
+
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>

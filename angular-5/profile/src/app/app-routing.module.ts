@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HttpComponent } from './http/http.component';
+import { HttpFakeServerComponent } from './http-fake-server/http-fake-server.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'http',
     component: HttpComponent
+  },
+  {
+    path: 'http-fake-server',
+    component: HttpFakeServerComponent
   }
 ];
 

@@ -9,7 +9,7 @@
         <!-- form section start -->
         <div class="col-md-4">
           <h4 class="form-box__header">Enter your text</h4>
-          <form>
+          <form action="#" (keydown)="keyDown($event)">
             <div class="row no-gutters">
               <div class="col-12">
                 <input type="text" class="form-box__input" name="item" placeholder="Angular is my goal.." [(ngModel)]='goalText' required>

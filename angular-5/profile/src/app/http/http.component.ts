@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpComponent implements OnInit {
 
-  readonly ROOT_URL = 'https://jsonplaceholder.typicode.com';
+  readonly ROOT_URL = `https://my-json-server.typicode.com/imjayabal/fake-json`;
 
   posts: any;
 
   constructor( private http: HttpClient) { }
 
   getPosts() {
-    this.posts = this.http.get(this.ROOT_URL + '/posts');
+    this.posts = this.http.get(this.ROOT_URL + `/posts`);
   }
 
   ngOnInit() {

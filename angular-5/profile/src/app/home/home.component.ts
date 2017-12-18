@@ -29,6 +29,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  keyDown(event) {
+    if (event.keyCode === 13) {
+      this.addItem();
+    }
+  }
+
   removeItem(i) {
     this.goals.splice(i, 1);
     this.itemCount = this.goals.length;

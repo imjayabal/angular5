@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HttpComponent } from './http/http.component';
+import { HttpFakeServerComponent } from './http-fake-server/http-fake-server.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HttpComponent } from './http/http.component';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    HttpComponent
+    HttpComponent,
+    HttpFakeServerComponent
   ],
   imports: [
     BrowserModule,

@@ -13,15 +13,15 @@
           <thead>
             <tr>
               <th scope="col">User Id</th>
-              <th scope="col">Title</th>
-              <th scope="col">Body Text</th>
+              <th scope="col">Name</th>
+              <th scope="col">Age</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let post of posts | async">
               <th scope="row">{{ post.id }}</th>
-              <td>{{ post.title }}</td>
-              <td>{{ post.body }}</td>
+              <td>{{ post.name }}</td>
+              <td>{{ post.age }}</td>
             </tr>
           </tbody>
         </table>
