@@ -10,7 +10,7 @@
                 <!-- form start -->
                 <form action="#" (keydown)="keyDown($event)">
                   <div class="form-group">
-                    <label for="inputName">Name</label>
+                    <label for="inputName">Name <small>(Please enter "jayabal" or "sadam" or "barath")</small></label>
                     <input type="text" class="form-control" id="inputName" (keyup) = 'keyUp($event)'>
                   </div>
                   <button class="btn btn-primary" (click)='getData()' >{{ btnText }}</button> 

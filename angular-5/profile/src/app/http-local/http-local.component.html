@@ -1,0 +1,18 @@
+<section id="http-local">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="http-local">
+            <h1>Local JSON file</h1>
+            <button class="btn btn-primary" (click)="getLocal()" >Get</button>
+
+            <br><br>
+            <h4>Result:</h4>
+            <div *ngFor="let post of posts | async">
+                <p>#{{post.id}}  Name: <strong>{{post.name}}</strong>  age: <strong>{{post.age}}</strong> empoyee code: <strong>{{post.employeeCode}}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

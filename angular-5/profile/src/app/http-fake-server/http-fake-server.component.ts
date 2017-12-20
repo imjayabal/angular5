@@ -40,7 +40,7 @@ export class HttpFakeServerComponent implements OnInit {
         }
       },
       err => {
-        console.log('Error occured');
+        console.log(`Error occured`);
       }
     );
   }

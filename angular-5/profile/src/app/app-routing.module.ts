@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HttpComponent } from './http/http.component';
 import { HttpFakeServerComponent } from './http-fake-server/http-fake-server.component';
+import { HttpLocalComponent } from './http-local/http-local.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'http-fake-server',
     component: HttpFakeServerComponent
+  },
+  {
+    path: 'http-local',
+    component: HttpLocalComponent
   }
 ];
 
