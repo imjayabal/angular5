@@ -1,6 +1,29 @@
 
-.table{
-    th{
-        cursor: pointer;
+#search-filter-pagination{
+    .table{
+        background: #FFF;
+        th{
+            cursor: pointer;
+        }
+    }
+
+    .form-group{
+        width: 200px;
+    }
+    
+    .caret-up{
+        height: 0px;
+        width: 0px;
+        border: 10px solid transparent;
+        border-top: none;
+        border-bottom-color:#000;
+    }
+    
+    .caret-down{
+        height: 0px;
+        width: 0px;
+        border: 10px solid transparent;
+        border-bottom: none;
+        border-top-color:#000;
     }
 }
