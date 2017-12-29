@@ -8,11 +8,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+
+// app pages components
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HttpComponent } from './http/http.component';
 import { HttpFakeServerComponent } from './http-fake-server/http-fake-server.component';
 import { HttpLocalComponent } from './http-local/http-local.component';
+import { HeaderComponent } from './header/header.component';
+import { PaginationComponent } from './pagination/pagination.component';
+
+// plugins for search, sort and pagination
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -22,14 +31,19 @@ import { HttpLocalComponent } from './http-local/http-local.component';
     AboutComponent,
     HttpComponent,
     HttpFakeServerComponent,
-    HttpLocalComponent
+    HttpLocalComponent,
+    HeaderComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,7 @@ export class HttpComponent implements OnInit {
   readonly ROOT_URL = `https://jsonplaceholder.typicode.com`;
 
   posts: any;
+  p: number = 1;
 
   constructor( private http: HttpClient) { }
 

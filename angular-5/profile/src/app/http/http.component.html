@@ -18,7 +18,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let post of posts | async">
+            <tr *ngFor="let post of posts | async | paginate: {itemsPerPage:10, currentPage:p}">
               <th scope="row">{{ post.id }}</th>
               <td>{{ post.title }}</td>
               <td>{{ post.body }}</td>
@@ -26,7 +26,7 @@
           </tbody>
         </table>
         <!-- table end -->
-
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
       </section>
     </div>
   </div>

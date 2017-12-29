@@ -6,6 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { HttpComponent } from './http/http.component';
 import { HttpFakeServerComponent } from './http-fake-server/http-fake-server.component';
 import { HttpLocalComponent } from './http-local/http-local.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'http-local',
     component: HttpLocalComponent
+  },
+  {
+    path: 'pagination',
+    component: PaginationComponent
   }
 ];
 
