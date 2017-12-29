@@ -3,7 +3,7 @@
     
     <div class="form-group">
       <label class="col-form-label" for="searchData">Search Data</label>
-      <input type="text" class="form-control" id="searchData" placeholder="Search" [(ngModel)]="filter">
+      <input type="text" class="form-control" id="searchData" placeholder="Search" [(ngModel)]="searchFilter">
     </div>
   
 
@@ -17,7 +17,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employee of employees | async | orderBy: key : reverse| filter:filter | paginate: { itemsPerPage: 5, currentPage: p }">
+        <tr *ngFor="let employee of employees | async | orderBy: key : reverse| filter:searchFilter | paginate: { itemsPerPage: 5, currentPage: p }">
           <td >{{ employee.id }}</td>
           <td>{{ employee.name }}</td>
           <td>{{ employee.employeeCode }}</td>
