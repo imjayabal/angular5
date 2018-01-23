@@ -1,5 +1,5 @@
+import { MyjsonService } from './../services/myjson.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-http',
@@ -8,15 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpComponent implements OnInit {
 
-  readonly ROOT_URL = `https://jsonplaceholder.typicode.com`;
-
   posts: any;
   p: number = 1;
 
-  constructor( private http: HttpClient) { }
+  constructor( private service: MyjsonService) { }
 
   getPosts() {
-    this.posts = this.http.get(this.ROOT_URL + `/posts`);
+    this.posts = this.service.getLongData();
   }
 
   ngOnInit() {

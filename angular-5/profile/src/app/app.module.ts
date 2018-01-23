@@ -1,3 +1,4 @@
+import { MyjsonService } from './services/myjson.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import * as $ from 'jquery/dist/jquery.min.js';
@@ -45,7 +46,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     Ng2OrderModule,
     NgxPaginationModule
   ],
-  providers: [],
+  providers: [
+    MyjsonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

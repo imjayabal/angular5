@@ -1,5 +1,5 @@
+import { MyjsonService } from './../services/myjson.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-http-fake-server',
@@ -20,9 +20,9 @@ export class HttpFakeServerComponent implements OnInit {
   //  postAge: number;
   //  postEmpId: number;
 
-  readonly FAKE_URL = `https://my-json-server.typicode.com/imjayabal/fake-json`;
+ 
 
-  constructor( private https: HttpClient ) { }
+  constructor( private service: MyjsonService ) { }
 
   keyUp(event: any) {
       this.name = event.target.value;
@@ -30,7 +30,8 @@ export class HttpFakeServerComponent implements OnInit {
   }
 
   getData() {
-    this.https.get( this.FAKE_URL + `/posts/?name=${this.name}`).subscribe(
+    this.service.getData()
+    .subscribe(
       (data: any[]) => {
         if (data.length) {
           this.age = data[0].age;

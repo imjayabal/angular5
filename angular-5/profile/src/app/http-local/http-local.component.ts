@@ -1,5 +1,5 @@
+import { MyjsonService } from './../services/myjson.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-http-local',
@@ -10,12 +10,10 @@ export class HttpLocalComponent implements OnInit {
 
   posts: any;
 
-  readonly ROOT_URL = `./assets/data/db.json`;
-
-  constructor( private https: HttpClient) { }
+  constructor( private service: MyjsonService) { }
 
   getLocal() {
-    this.posts = this.https.get(this.ROOT_URL);
+    this.posts = this.service.getLocalData();
   }
 
   ngOnInit() {

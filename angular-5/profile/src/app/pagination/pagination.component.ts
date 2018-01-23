@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import 'rxjs/operator/filter';
+import { MyjsonService } from '../services/myjson.service';
 
 @Component({
   selector: 'app-pagination',
@@ -15,13 +15,13 @@ export class PaginationComponent implements OnInit {
   p: number = 1;
   searchFilter: any;
 
-  readonly FAKE_URL = `https://my-json-server.typicode.com/imjayabal/fake-json`;
 
-  constructor(private https: HttpClient) {}
+
+  constructor(private service: MyjsonService) {}
 
 
     ngOnInit() {
-      this.employees = this.https.get(this.FAKE_URL + `/posts`);
+      this.employees = this.service.getData();
     }
 
   sort(key) {
