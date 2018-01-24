@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="template-form">
+        <h1 class="text-center">Template Driven Forms</h1>
+        
+        <!-- form start -->
+        <form #f="ngForm" (ngSubmit)="submit(f)">
+          <div class="row">
+
+            <!-- first name -->
+            <div class="col-md-6 form-group">
+              <label for="firstName">First Name</label>
+              <input  ngModel #firstName="ngModel" (change)="log(firstName)" type="text" id="firstName" class="form-control" [ngModelOptions]="{standalone: true}"  required minlength="5" maxlength="10" pattern="jayabal">
+
+              <!-- alert messages -->
+              <div class="alert alert-danger"  *ngIf="firstName.touched && !firstName.valid">
+                <div *ngIf="firstName.errors.required">First Name is required</div>
+                <div *ngIf="firstName.errors.minlength">Minimum {{ firstName.errors.minlength.requiredLength }} charectors required</div>
+                <div *ngIf="firstName.errors.pattern">Invalid pattern</div>
+              </div>
+            </div>
+
+            <!-- last name -->
+            <div class="col-md-6 form-group">
+              <label for="lastName">Last Name</label>
+              <input  type="text" id="lastName" class="form-control">
+            </div>
+
+            <!-- comment -->
+            <div class="col-md-12 form-group">
+              <label for="comment"></label>
+              <textarea  cols="30" rows="10" class="form-control"></textarea>
+            </div>
+
+            <!-- submit button -->
+            <button class="btn btn-primary">Submit</button>
+
+
+
+          </div>
+        </form>
+        <!-- form end -->
+
+
+      </div>
+    </div>
+  </div>
+</div>
