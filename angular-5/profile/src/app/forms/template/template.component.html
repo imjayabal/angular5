@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="template-form">
         <h1 class="text-center">Template Driven Forms</h1>
-        
+
         <!-- form start -->
         <form #f="ngForm" (ngSubmit)="submit(f)">
           <div class="row">
@@ -11,30 +11,69 @@
             <!-- first name -->
             <div class="col-md-6 form-group">
               <label for="firstName">First Name</label>
-              <input  ngModel #firstName="ngModel" (change)="log(firstName)" type="text" id="firstName" class="form-control" [ngModelOptions]="{standalone: true}"  required minlength="5" maxlength="10" pattern="jayabal">
+              <input ngModel name="firstName" #firstName="ngModel" type="text" id="firstName" class="form-control" required minlength="5"
+                maxlength="10">
 
               <!-- alert messages -->
-              <div class="alert alert-danger"  *ngIf="firstName.touched && !firstName.valid">
+              <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
                 <div *ngIf="firstName.errors.required">First Name is required</div>
                 <div *ngIf="firstName.errors.minlength">Minimum {{ firstName.errors.minlength.requiredLength }} charectors required</div>
-                <div *ngIf="firstName.errors.pattern">Invalid pattern</div>
               </div>
             </div>
 
             <!-- last name -->
             <div class="col-md-6 form-group">
               <label for="lastName">Last Name</label>
-              <input  type="text" id="lastName" class="form-control">
+              <input ngModel name="lastName" #lastName="ngModel" minlength="5" maxlength="15" type="text" id="lastName" class="form-control"
+                required>
+
+              <div class="alert alert-danger" *ngIf="lastName.touched && lastName.invalid">
+                <div *ngIf="lastName.errors.required">Last Name is required</div>
+                <div *ngIf="lastName.errors.minlength">Minimum {{ lastName.errors.minlength.requiredLength }} charectors required</div>
+              </div>
             </div>
 
             <!-- comment -->
-            <div class="col-md-12 form-group">
-              <label for="comment"></label>
-              <textarea  cols="30" rows="10" class="form-control"></textarea>
+            <div class="col-md-12">
+              <div class="form-group">
+                <label for="comment">Write your comments</label>
+                <textarea ngModel name="comment" cols="30" rows="10" class="form-control"></textarea>
+              </div>
+
+              <!-- checkbox -->
+              <div class="form-check">
+                <input ngModel name="isChecked" type="checkbox" id="checkBox" class="form-check-input">
+                <label for="checkBox" class="form-check-label">Subscribe our news letter</label>
+              </div>
+
+              <br>
+
+              <!-- dropdown -->
+              <div class="from-group">
+                <label for="dropDown">Select Employee</label>
+                <select ngModel name="empId" id="dropDown" class="form-control">
+                  <option value=""></option>
+                  <option *ngFor="let method of myDropdownData | async" [value]="method.employeeCode"> {{ method.name }} </option>
+                </select>
+              </div>
+              <br>
+
+              <!-- radio box -->
+              <div *ngFor="let patients of myPatient" class="form-check">
+                <input ngModel name="patient" type="radio" id="newPatient{{ patients.id }}" class="form-check-input" [value]="patients.id">
+                <label for="newPatient{{ patients.id }}" class="form-check-label">{{ patients.name }}</label>
+              </div>
+
+              <br>
+              <p>{{ f.value | json }}</p>
             </div>
 
+            <br>
+            <br>
+
             <!-- submit button -->
-            <button class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+            <!-- <button type="button" class="btn btn-danger">Cancel</button> -->
 
 
 

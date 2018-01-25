@@ -1,3 +1,4 @@
+import { MyjsonService } from './../../services/myjson.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponent implements OnInit {
 
-  constructor() { }
+  myDropdownData: any;
+
+  myPatient= [
+    { id: 1, name: 'New Patient'},
+    { id: 2, name: 'Existing Patient'}
+  ];
+
+
+
+  constructor( private service: MyjsonService) { }
 
   ngOnInit() {
+    this.myDropdownData = this.service.getData();
   }
 
   log(x) {
@@ -19,5 +30,7 @@ export class TemplateComponent implements OnInit {
   submit(f) {
     console.log(f);
   }
+
+
 
 }
