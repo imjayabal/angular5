@@ -37,7 +37,11 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label for="comment">Write your comments</label>
-                <textarea ngModel name="comment" cols="30" rows="10" class="form-control"></textarea>
+                <textarea ngModel name="comment" #comment="ngModel" minlength="10" cols="30" rows="10" class="form-control" required></textarea>
+                <div class="alert alert-danger" *ngIf="comment.touched && comment.invalid">
+                  <div *ngIf="comment.errors.required">Comment is required</div>
+                  <div *ngIf="comment.errors.minlength">Minimum {{ comment.errors.minlength.requiredLength }} charectors required</div>
+                </div>
               </div>
 
               <!-- checkbox -->

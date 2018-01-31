@@ -1,13 +1,16 @@
+import { ConsumeHttpServiceComponent } from './http-service/consume-http-service/consume-http-service.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { HttpComponent } from './http/http.component';
-import { HttpFakeServerComponent } from './http-fake-server/http-fake-server.component';
-import { HttpLocalComponent } from './http-local/http-local.component';
-import { PaginationComponent } from './pagination/pagination.component';
+import { HttpComponent } from './http-service/http/http.component';
+import { HttpFakeServerComponent } from './http-service/http-fake-server/http-fake-server.component';
+import { HttpLocalComponent } from './http-service/http-local/http-local.component';
+import { PaginationComponent } from './http-service/pagination/pagination.component';
+// forms
 import { TemplateComponent } from './forms/template/template.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 
 const routes: Routes = [
   {
@@ -37,6 +40,14 @@ const routes: Routes = [
   {
     path: 'forms/template',
     component: TemplateComponent
+  },
+  {
+    path: 'forms/reactive-form',
+    component: ReactiveFormComponent
+  },
+  {
+    path: 'http-service/consume-http-service',
+    component: ConsumeHttpServiceComponent
   }
 ];
 

@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
       this.goals.push(this.goalText);
       this.goalText = '';
       this.itemCount = this.goals.length;
+      // localStorage.setItem('contactdata', JSON.stringify(this.goals));
     }
   }
 

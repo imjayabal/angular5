@@ -1,0 +1,38 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="get-data">
+        <h1>Get Data</h1>
+
+        <!-- input field -->
+        <div class="form-group">
+            <label for="postdata">Post Data</label>
+            <input 
+              (keyup.enter)="postData(myVariable)" #myVariable 
+              type="text" id="postdata" class="form-control">
+        </div>
+
+        <!-- list loop -->
+        <ul class="list-group">
+          <li *ngFor="let data of getData" class="list-group-item">          
+
+            {{ data.name }}
+
+            <!-- Update data button -->
+            <button 
+              (click)="udpateData(data)" 
+              class="btn btn-primary btn-sm float-right">Update</button>
+
+            <!-- delete data button -->
+             <button 
+             (click)="deleteData(data)" 
+             class="btn btn-normal btn-sm float-right">Delete</button>
+          </li>
+        </ul>
+
+        
+      </div>
+    </div>
+  </div>
+</div>

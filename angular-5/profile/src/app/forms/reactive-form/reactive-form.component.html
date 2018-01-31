@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="reactive-form">
+        
+        <form [formGroup]="signupForm" >
+
+          <!-- username -->
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input formControlName="username" id="username" type="text" class="form-control" >
+            <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+              <div *ngIf="username.errors.required">Username filed is required</div>
+              <div *ngIf="username.errors.minlength">Minimum {{ username.errors.minlength.requiredLength }} charectors required</div>
+            </div>
+          </div>
+
+          <!-- password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input formControlName="password" type="text" id="password" class="form-control">
+            <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+              <div *ngIf="password.errors.required">Password field is required</div>
+              <div *ngIf="password.errors.minlength">Minimum {{ password.errors.minlength.requiredLength }} charactors required</div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Sign Up</button> 
+
+
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>

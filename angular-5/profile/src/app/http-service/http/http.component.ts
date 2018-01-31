@@ -1,4 +1,4 @@
-import { MyjsonService } from './../services/myjson.service';
+import { MyjsonService } from '../../services/myjson.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

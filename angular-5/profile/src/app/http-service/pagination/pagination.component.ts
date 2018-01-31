@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/operator/filter';
-import { MyjsonService } from '../services/myjson.service';
+import { MyjsonService } from '../../services/myjson.service';
 
 @Component({
   selector: 'app-pagination',
