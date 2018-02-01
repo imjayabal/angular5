@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { MyjsonService } from './../../services/myjson.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,48 +6,80 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './consume-http-service.component.html',
   styleUrls: ['./consume-http-service.component.scss']
 })
-export class ConsumeHttpServiceComponent {
+export class ConsumeHttpServiceComponent implements OnInit {
 
-  getData: any;
-
-  readonly url = `https://my-json-server.typicode.com/imjayabal/fake-json/posts`;
+  getMyData: any;
 
   // Get data
-  constructor(private https: HttpClient) {
-    https.get(this.url)
-    .subscribe(response => {
-      this.getData = response;
-    });
+  constructor(private service: MyjsonService) {
   }
 
-  // post data
+  ngOnInit() {
+    this.service.getData()
+    .subscribe(
+      response => {
+        this.getMyData = response;
+      },
+      error => {
+        alert('An unexpected error occurred.');
+        console.log(error);
+      });
+  }
+
+  // create post data
   postData(myVariable: HTMLInputElement) {
     const myPost = { name: myVariable.value };
     myVariable.value = '';
 
-    this.https.post(this.url, JSON.stringify(myPost))
-    .subscribe(response => {
-      this.getData.splice(0, 0, myPost); // "splice" for insert data begining
-      // this.getData.push(myPost); // "push" for insert data last
-    });
+    this.service.postData(myPost)
+    .subscribe(
+      response => {
+        this.getMyData.splice(0, 0, myPost); // "splice" for insert data begining
+        // this.getMyData.push(myPost); // "push" for insert data last
+      },
+      (error: Response) => {
+        if (error.status === 400) {
+          // this.form.setErrors(error.json());
+        } else {
+          alert ('An unexpected error occurred.');
+        console.log(error);
+        }
+      });
   }
 
   // update data
   udpateData(data) {
-    // this.https.put(this.url + '/' + data.id, JSON.stringify(data)) // for entier data in request payload (console> network)
-    this.https.put(this.url + '/' + data.id, JSON.stringify({ isRed: true })) // for single change in request payload
-    .subscribe(response => {
-      console.log(response);
-    });
+    this.service.udpateData(data)
+    .subscribe(
+      response => {
+        console.log(response);
+      },
+      error => {
+        alert ('An unexpected error occurred.');
+        console.log(error);
+      });
   }
 
   // delete data
   deleteData(data) {
-    this.https.delete(this.url + '/' + data.id)
-    .subscribe(response => {
-      const index = this.getData.indexOf(data);
-      this.getData.splice(index, 1);
-    });
+    this.service.deleteData(data)
+    .subscribe(
+      response => {
+        const index = this.getMyData.indexOf(data);
+        this.getMyData.splice(index, 1);
+      },
+      (error: Response) => {
+        if (error.status === 404) {
+          alert('This post already deleted');
+        } else {
+          alert ('An unexpected error occurred.');
+          console.log(error);
+        }
+      });
   }
+
+
+
+
 
 }

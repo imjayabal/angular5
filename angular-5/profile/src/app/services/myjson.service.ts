@@ -17,6 +17,18 @@ export class MyjsonService {
   getData() {
     return this.https.get(this.ROOT_URL + `/posts`);
   }
+  postData(myPost) {
+    return this.https.post(this.ROOT_URL  + `/posts`, JSON.stringify(myPost));
+  }
+  udpateData(data) {
+    return this.https.patch(this.ROOT_URL + `/posts` + '/' + data.id, JSON.stringify({ isRed: true }));
+    // return this.https.put(this.ROOT_URL + `/posts` + '/' + data.id, JSON.stringify(data));
+    // for entier data in request payload (console> network) use "put" for particular changes use "patch"
+  }
+  deleteData(data) {
+    return this.https.delete(this.ROOT_URL + `/posts` + '/' + data.id);
+  }
+
 
   getLocalData() {
     return this.https.get(this.LOCAL_URL);
