@@ -37,6 +37,12 @@
       </div>
     </div>
     <!-- form box end -->
+    <hr>
+    <h2>If else condition</h2>
+    <!-- testing -->
+    <div class="if-else" *ngIf="isAvailable; then resultOne else resultTwo">This is dummy text</div>
+    <ng-template #resultOne><h4>Data is available</h4></ng-template>
+    <ng-template #resultTwo>Data is not available</ng-template>
 
   </div>
   <!-- container end -->

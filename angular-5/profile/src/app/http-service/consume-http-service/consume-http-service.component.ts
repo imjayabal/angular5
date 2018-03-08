@@ -78,8 +78,4 @@ export class ConsumeHttpServiceComponent implements OnInit {
       });
   }
 
-
-
-
-
 }

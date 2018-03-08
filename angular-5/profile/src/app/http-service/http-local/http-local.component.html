@@ -8,7 +8,7 @@
 
             <br><br>
             <h4>Result:</h4>
-            <div *ngFor="let post of posts | async">
+            <div *ngFor="let post of posts | async | slice:0:5">
                 <p>#{{post.id}}  Name: <strong>{{post.name}}</strong>  age: <strong>{{post.age}}</strong> empoyee code: <strong>{{post.employeeCode}}</strong></p>
             </div>
           </div>

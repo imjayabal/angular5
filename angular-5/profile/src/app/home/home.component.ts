@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   goalText: any = 'My life fourth goal';
   goals = ['My life first goal', 'My life second goal', 'My life third goal'];
 
-
+  isAvailable = true;
 
   constructor() { }
 
